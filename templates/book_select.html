@@ -1,0 +1,61 @@
+{% extends "layout.html" %} {% block content %}
+<article class="media content-section ">
+
+    <object class ="article-img-sm " data=" http://covers.openlibrary.org/b/isbn/{{book.isbn}}-M.jpg">
+
+       <img class ="article-img " src=" https://images.pexels.com/photos/51342/books-education-school-literature-51342.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+
+
+     </object>
+
+
+
+
+  <div class="media-body">
+   <div class="article-metadata">
+   <a class="mr-2" href="#">Published: {{ book.year }}</a>
+   <small class="text-muted">Book isbn: {{book.isbn }}</small>
+  </div>
+  <h2>{{ book.title }}</h2>
+  <p class="article-content">{{book.author }}</p>
+<p class="article-content">Average rating for this book on     Goodreads:    {{data.books[0]['average_rating']}}</p>
+<p class="article-content">Number of ratings for this book on Goodreads: {{data.books[0]['work_ratings_count']}}</p>
+
+
+{% for post in posts %}
+  {% if book.books_id==post.books_id %}
+  <div class="article-post" >
+
+
+     <div class="media content-section-sm ">
+         <img class ="rounded-circle article-img" src="{{ url_for('static', filename ='profile_pics/'+post.image_file ) }}" alt="">
+       <div class="media-body">
+     <div class="article-metadata">
+       <a class="mr-2" href="">{{ post.username }}</a>
+       <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+
+        <br><small class="text-muted">User {{ post.username }} rated this book:</small>
+            {% for i in range(post.rate) %}
+
+              <span class="fa fa-star checked"></span>
+              {% endfor %}
+
+
+
+     </div>
+     <a class="article-title" href="{{url_for('post', post_id=post.post_id)}}"><h4>{{ post.headline }}</h4></a>
+     <p class="article-content">{{ post.content }}</p>
+   </div>
+  </div>
+  </div>
+ {% endif %}
+{% endfor %}
+
+</div>
+
+</article>
+
+
+
+
+{% endblock %}

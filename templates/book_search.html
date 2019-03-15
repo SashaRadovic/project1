@@ -1,0 +1,67 @@
+{% extends "layout.html" %} {% block title %} Book Search {% endblock %} {% block content %}
+<div class="content-section">
+  <form action="" method="post">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">{{ legend }}</legend>
+
+      <div class="form-group">
+
+        {{ form.search_type.label(class="form-control-label") }} {{ form.search_type(class="form-control form-control-lg") }}
+      </div>
+      <div class="form-group">
+        {{ form.query_input.label(class="form-control-label") }} {% if form.query_input.errors %} {{ form.query_input(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+
+          {% for error in form.query_input.errors %}
+
+          <span>{{ error  }}</span> {% endfor %}
+
+        </div>
+        {% else %} {{ form.query_input(class="form-control form-control-lg") }} {% endif %}
+      </div>
+      <div class="form-group">
+        {{ form.submit(class="btn btn-outline-info") }}
+<!--#fafafa-->
+<!--color: #333333;-->
+      </div>
+
+    </fieldset>
+
+  </form>
+</div>
+<div class="content-section" >
+
+    <ul>
+
+        {% for book in query_display_choices %}
+ <li>
+
+        <article class="media content-section">
+            <img class ="article-img-sm" src="static/book_pics/books-education-school-literature-51342.jpeg" alt="Book picture">
+          <div class="media-body">
+            <div class="article-metadata">
+              Year published: {{ book[4] }}
+              <small class="text-muted">isbn: {{ book[0] }}</small>
+            </div>
+            <h3><a href="{{ url_for('new_post', books_id=book[3]) }}">{{ book[1] }}</a></h3>
+            <p class="article-content">{{ book[2] }}</p>
+          </div>
+        </article>
+
+     </li>
+
+
+
+
+        {% endfor %}
+
+
+
+    </ul>
+
+
+</div>
+
+
+{% endblock %}
