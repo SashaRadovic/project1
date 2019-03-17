@@ -12,7 +12,7 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, login_user, UserMixin, current_user, logout_user, login_required
 from flask_wtf import FlaskForm
 #postgresql://postgres:123@localhost:5432/project1
-os.environ["DATABASE_URL"]="postgres://wimnopegmrmjwv:8ae4461cdeba46d5967ea37063c1b85d659262f11c2b59b2865b1b31652b999e@ec2-79-125-4-96.eu-west-1.compute.amazonaws.com:5432/d45tl12lu17jti"
+os.environ["DATABASE_URL"]="postgres://yxhgpatjczqebb:7b840aada0efcb2afc3b315236a7753c7a5537772fbfc3451bea67f53d9e825e@ec2-50-19-109-120.compute-1.amazonaws.com:5432/d8v6ci2dq60tlp"
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '101df5a0682cd99e66d32f2adbae1df5'
 login_manager = LoginManager(app)
