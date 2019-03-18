@@ -83,7 +83,7 @@ def register():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
 
         db.execute("INSERT INTO users (username, email, password, image_file) VALUES (:username, :email, :password, :image_file)",
-                   {"username": form.username.data, "email": form.email.data, "password": hashed_password, "image_file":"default.JPG"})
+                   {"username": form.username.data, "email": form.email.data, "password": hashed_password, "image_file":"default.jpg"})
         db.commit()
         flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('login'))
