@@ -30,12 +30,12 @@
      <div class="media content-section-sm ">
          <object class="rounded-circle article-img" data="{{ url_for('static', filename ='profile_pics/'+post.image_file ) }}" alt="">
 
-               <img class="rounded-circle account-img" src="https://image.freepik.com/free-photo/concentrated-girl-surrounded-by-books_1098-2136.jpg">
+               <img class="rounded-circle article-img" src="https://image.freepik.com/free-photo/concentrated-girl-surrounded-by-books_1098-2136.jpg">
 
          </object>
        <div class="media-body">
      <div class="article-metadata">
-       <a class="mr-2" href="">{{ post.username }}</a>
+       <a class="mr-2" href="{{url_for('account')}}">{{ post.username }}</a>
        <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
 
         <br><small class="text-muted">User {{ post.username }} rated this book:</small>
