@@ -2,7 +2,14 @@
 {% block content %}
 <div class="content-section">
   <div class="media">
-    <img class="rounded-circle account-img" src="{{image_file}}">
+
+
+    <object class="rounded-circle account-img" data="{{image_file}}">
+
+      <img class="rounded-circle account-img" src="https://cdn2.vectorstock.com/i/1000x1000/97/31/book-reading-person-man-education-icon-vector-10189731.jpg">
+
+</object>
+
     <div class="media-body">
       <h2 class="account-heading">{{current_user.username}}</h2>
       <p class="text-secondary">{{current_user.email}}</p>
