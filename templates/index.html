@@ -29,7 +29,17 @@
 
 
       <div class="media mt-4 ">
-        <img class="rounded-circle article-img" src="{{ url_for('static', filename ='profile_pics/'+post.image_file ) }}" alt="">
+
+          
+
+
+
+
+        <object class="rounded-circle article-img" data="{{ url_for('static', filename ='profile_pics/'+post.image_file ) }}" alt="">
+
+              <img class="rounded-circle account-img" src="https://image.freepik.com/free-photo/concentrated-girl-surrounded-by-books_1098-2136.jpg">
+
+        </object>
         <div class="media-body">
           <div class="article-metadata">
             <a class="mr-2" href="">{{ post.username }}</a>
