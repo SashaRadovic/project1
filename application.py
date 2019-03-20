@@ -11,8 +11,8 @@ from forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm, Sear
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, login_user, UserMixin, current_user, logout_user, login_required
 from flask_wtf import FlaskForm
-#postgresql://postgres:123@localhost:5432/project1
-os.environ["DATABASE_URL"]="postgres://yxhgpatjczqebb:7b840aada0efcb2afc3b315236a7753c7a5537772fbfc3451bea67f53d9e825e@ec2-50-19-109-120.compute-1.amazonaws.com:5432/d8v6ci2dq60tlp"
+
+os.environ["DATABASE_URL"]="DATABASE_URL"
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '101df5a0682cd99e66d32f2adbae1df5'
 login_manager = LoginManager(app)
